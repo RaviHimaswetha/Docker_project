@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-text-processing
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: python-text-processing
+  template:
+    metadata:
+      labels:
+        app: python-text-processing
+    spec:
+      containers:
+      - name: python-text-processing-container
+        image: himaswetha/python-text-processing:latest  # Updated with your username
+        ports:
+        - containerPort: 8080
